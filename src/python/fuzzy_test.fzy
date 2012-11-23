@@ -1,0 +1,26 @@
+domain Speed from 0 to 255
+{
+	stop = left(0, 0);
+	slow = left(64,64);
+	med = centre(128,64);
+	fast = right(196, 64);
+}
+
+domain Distance from 0 to 300
+{
+	close = left(50, 50);
+	far = right(100, 50);
+}
+
+vars
+{
+	left, right: out Speed;
+	obstruction: in Distance;
+}
+
+rules
+{
+	if obstruction is very close and obstruction is far then
+		left := stop, right := stop;
+}
+
